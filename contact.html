@@ -1,0 +1,178 @@
+
+
+  <!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Utkal University</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+</head>
+<body>
+    <!---------header section---------->
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/logo.png" ></a>
+  
+            <div class="nav-links" id="navLinks">
+              <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+             
+              <ul>
+  
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+  
+                </ul>
+                
+            </div>
+            <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+           </nav>
+        <h1>CONTACT Us</h1>
+    </section >
+
+    <!---------contact us content------------>
+
+    <section class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.9103034696554!2d85.83747681458532!3d20.30397951750104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909f2fb8416b5%3A0xf04a450cccd03186!2zVXRrYWwgVW5pdmVyc2l0eSAsIEJodWJhbmVzd2FyKCDgrIngrKTgrY3grJXgrLMg4Kys4Ky_4Ky24K2N4K2x4Kys4Ky_4Kym4K2N4K2f4Ky-4Kyz4K2fICwg4Kyt4K2B4Kys4Kyo4K2H4Ky24K2N4K2x4KywICk!5e0!3m2!1sen!2sin!4v1657892093919!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section class="contact-us">
+        <div class="row">
+            <div class="contact-col">
+            
+                <div>
+                <i class="fa fa-home"></i>
+                <span>
+                    <h5>Utkal University</h5>
+                    <p>Bhubaneswar, Odisha</p>
+                </span>
+                </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <span>
+                    <h5>+91 9938156380</h5>
+                    <p>Monday to Saturday , 10AM to 6PM</p>
+                </span>
+            </div>
+            <br>
+            <div>
+                <i class="fa fa-envelope-open"></i>
+                <span>
+                    <h5>abhimanyudebata6@gmail.com</h5>
+                    <p>Email Us Your Query</p>
+                </span>
+            </div>
+        
+        </div>
+        <div class="contact-col">
+            <form action="javascript:sendmail()" method="post">
+                <div class="field">
+                  <input type="text" class="form-control" name="Name" id="Name" placeholder="Name" required="">
+                </div>
+                <div class="field">
+                  <input type="email" class="form-control" name="Sender" id="Sender" placeholder="Email"
+                    required="">
+                </div>
+                <div class="field">
+                  <input type="text" class="form-control" name="Subject" id="Subject" placeholder="Subject"
+                    required="">
+                </div>
+                <textarea name="Message" class="form-control" id="Message" placeholder="Message"
+                  required=""></textarea>
+                <button type="submit" class="btn btn-contact">Send Message</button>
+                <!-- <input type="button" class="btn btn-contact" onclick="sendmail();"  value="Send Message"> -->
+  
+              </form>
+        </div>
+    </div>
+
+    </section>
+
+
+    <!--------footer-------->
+    <section class="footer">
+        <h4>UTKAL UNIVERSITY</h4>
+        <h6></h6>Utkal University is the <br>Odisha's No.1 University</h6> <br>
+        <h6>Copyright Utkal University, Bhubaneswar, Odisha</h6>
+        <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+    </section>
+
+
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+<script
+src="https://code.jquery.com/jquery-2.2.4.min.js"
+integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+crossorigin="anonymous"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>  
+
+   function sendmail(){
+  
+          var name = $('#Name').val();
+          var email = $('#Sender').val();
+          var subject = $('#Subject').val();
+    var message = $('#Message').val();
+
+          // var body = $('#body').val();
+
+          var Body='Name: '+name+'<br>Email: '+email+'<br>Subject: '+subject+'<br>Message: '+message;
+          //console.log(name, phone, email, message);
+
+          Email.send({
+      SecureToken:"fbf31702-bb7f-4a4e-9c1c-4ccf17ee777f",
+              To: 'abhimanyudebata6@gmail.com',
+              From: "demooptimalweb@gmail.com",
+              Subject: "New message on contact from "+name,
+              Body: Body
+          }).then(
+              message =>{
+                  //console.log (message);
+                  if(message=='OK'){
+                  alert('.');
+                  }
+                  else{
+                      console.error (message);
+                      alert('Your mail has been successfully send. Thank you for connecting.. ')
+                      
+                  }
+
+              }
+          );
+
+
+
+      }
+
+
+  </script>
+</script>
+<script>
+    var navLinks= document.getElementById('navLinks');
+    function showMenu(){
+        navLinks.style.right="0";
+    }
+    function closeMenu(){
+        navLinks.style.right="-200px";
+    }
+</script>
+
+</body>
+    
+</html>
